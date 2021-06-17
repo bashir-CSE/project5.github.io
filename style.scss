@@ -1,0 +1,353 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter&display=swap");
+
+// ====================variable===============
+$mainPadding: 0 10rem;
+$main-color: #283526;
+$primry-color: #888888;
+$button-background: #4b709e;
+$primary-button-background: #fe7649;
+$background-color: #f0f7ff;
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+body {
+	position: relative;
+}
+// =======================// mixin===================
+@mixin flex {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+@mixin userNone {
+	user-select: none;
+}
+@mixin button {
+	background-color: $primary-button-background;
+	border: none;
+	height: 40px;
+	width: 120px;
+	border-radius: 15px;
+	@include flex;
+	text-transform: capitalize;
+	cursor: pointer;
+	@include userNone;
+	transition: 0.2s all;
+	outline: none;
+	color: $background-color;
+	&:hover {
+		background-color: transparent;
+		color: $main-color;
+		border: 1px solid $primary-button-background;
+	}
+}
+
+html {
+	scroll-behavior: smooth;
+	body {
+		font-family: "Inter", sans-serif;
+	}
+}
+img {
+	height: 100%;
+	width: 100%;
+}
+.entry > button {
+	@include button;
+}
+@mixin logo {
+	height: 70px;
+	width: 147px;
+}
+#heroSection {
+	#navBar {
+		display: flex;
+		justify-content: space-between !important;
+		align-items: center;
+		height: 10vh;
+		background-color: transparent !important;
+		.logo {
+			@include logo();
+		}
+		.menu {
+			display: none;
+		}
+		.links {
+			.cross {
+				display: none;
+			}
+			@include flex;
+			gap: 2rem;
+			li {
+				list-style: none;
+				cursor: pointer;
+				a {
+					text-decoration: none;
+					color: $main-color;
+				}
+			}
+		}
+		.entry {
+			@include flex;
+			gap: 1rem;
+			button {
+				padding: 0.5rem 1rem;
+				cursor: pointer;
+			}
+		}
+	}
+	padding: $mainPadding;
+	min-height: 100vh !important;
+	width: 100%;
+	background-image: url(imgs/heropage.png);
+	background-repeat: no-repeat;
+	background-size: contain;
+	background-position: center;
+	.leftSide {
+		padding-top: 5rem;
+		max-width: 700px;
+		h1 {
+			font-size: 4rem;
+		}
+		p {
+			margin-top: 2rem;
+		}
+		.appStore {
+			margin-top: 3rem;
+			display: flex;
+			gap: 2rem;
+			& > div {
+				cursor: pointer;
+				height: 50px;
+				width: 150px;
+				&:last-child{
+					height: 55px;
+				}
+			}
+		}
+	}
+}
+
+@mixin section {
+	margin: 5rem 0;
+	@include flex;
+	height: 100vh;
+	width: 100vw;
+	padding: $mainPadding;
+	.left {
+		height: 500px;
+		flex: 50%;
+	}
+	.right {
+		flex: 50%;
+		display: flex;
+		justify-content: center;
+		align-items: self-end;
+		flex-direction: column;
+		padding-left: 3rem;
+		gap: 1rem;
+		h1 {
+			font-size: 4rem;
+		}
+		.entry {
+			display: flex;
+			gap: 1rem;
+		}
+	}
+}
+#about {
+	@include section;
+}
+
+#goals {
+	background-color: $background-color;
+
+	.cardSection {
+		height: 100vh;
+		padding: $mainPadding;
+		@include flex;
+		gap: 9rem;
+		.card {
+			flex: 1;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			text-align: center;
+			gap: 1rem;
+			.cardIcon {
+				height: 150px;
+				width: 150px;
+				transition: 0.5s all;
+				&:hover {
+					transform: rotate(360deg);
+				}
+			}
+		}
+	}
+}
+#tips {
+	@include section;
+}
+#takeCare {
+	@include section;
+	.right {
+		h1 {
+			font-size: 3rem;
+			margin-bottom: 2rem;
+		}
+		div {
+			margin-bottom: 1rem;
+			&:last-child {
+				margin-bottom: 0rem;
+			}
+			div {
+				display: flex;
+				align-items: center;
+				gap: 0.5rem;
+				.fa-heart {
+					color: $primary-button-background;
+				}
+				margin-bottom: 1rem;
+			}
+		}
+	}
+}
+#footer {
+	padding: $mainPadding;
+	background-color: $background-color;
+	height: 50vh;
+	@include flex;
+	.left {
+		flex: 40%;
+		.logo {
+			@include logo;
+		}
+	}
+	.right {
+		flex: 60%;
+		@include flex;
+		gap: 6rem;
+		text-transform: capitalize;
+		div {
+			display: flex;
+			flex-direction: column;
+			gap: 1rem;
+		}
+	}
+}
+// responsive breakpoint
+@media (max-width: 600px) {
+	$mainPadding: 0 2rem;
+	#heroSection {
+		background-size: contain;
+		background-position: center;
+		#navBar {
+			.null {
+				display: none !important;
+			}
+			.menu {
+				display: block;
+				position: fixed;
+				top: 31px;
+				right: 20px;
+			}
+			display: flex;
+			justify-content: center !important;
+			.links {
+				.cross {
+					display: block;
+					position: absolute;
+					top: 10px;
+					right: 17px;
+					cursor: pointer;
+					color: black;
+				}
+				display: block;
+				position: fixed;
+				top: 8vh;
+				text-align: center;
+				background-color: $primary-button-background;
+				height: 30vh;
+				width: 96%;
+				border-radius: 5px;
+				@include flex;
+				flex-direction: column;
+				box-shadow: 0px 7px 12px 4px $primry-color;
+				color: $background-color !important;
+				transform: translateY(-200%);
+				transition: transform 0.3s ease-out;
+			}
+			.show {
+				transform: translateY(0%);
+			}
+			.entry {
+				display: none;
+			}
+		}
+		padding: $mainPadding;
+		.leftSide {
+			padding-top: 7rem;
+			max-width: 100vw;
+			h1 {
+				font-size: 3rem;
+			}
+			.appStore {
+				& > div {
+					width: 150px;
+					margin: 0 auto;
+				}
+			}
+		}
+	}
+	@mixin section {
+		margin: 7rem 0;
+		flex-direction: column-reverse;
+		padding: $mainPadding;
+		gap: 2rem;
+		.left {
+			height: 500px;
+		}
+		.right {
+			padding-left: 0rem;
+		}
+	}
+	#tips {
+		@include section;
+	}
+	#about {
+		@include section;
+	}
+	#goals {
+		padding: 9rem 0;
+		.cardSection {
+			padding: $mainPadding;
+			flex-direction: column;
+			gap: 3rem;
+		}
+	}
+	#takeCare {
+		@include section;
+		margin: 15rem 0;
+	}
+	#footer {
+		padding: $mainPadding;
+		max-width: 3rem 0;
+		height: auto;
+		flex-direction: column;
+		.left {
+			.logo {
+				@include logo;
+				margin: 0 auto;
+			}
+		}
+		.right {
+			flex-direction: column;
+			gap: 3rem;
+			text-align: center;
+			margin: 2rem 0;
+		}
+	}
+}
