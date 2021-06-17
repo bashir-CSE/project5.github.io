@@ -239,7 +239,7 @@ img {
 	}
 }
 // responsive breakpoint
-@media (max-width: 600px) {
+@media (max-width: 678px) {
 	$mainPadding: 0 2rem;
 	#heroSection {
 		background-size: contain;
@@ -251,8 +251,8 @@ img {
 			.menu {
 				display: block;
 				position: fixed;
-				top: 31px;
-				right: 20px;
+				top: 20px;
+				right: 35px;
 			}
 			display: flex;
 			justify-content: center !important;
@@ -267,18 +267,24 @@ img {
 				}
 				display: block;
 				position: fixed;
-				top: 1vh;
 				text-align: center;
 				background-color: $primary-button-background;
-				height: 30vh;
-				width: 97%;
+				top: 2vh;
+				height: 50vh;
+				width: 95%;
 				border-radius: 5px;
 				@include flex;
 				flex-direction: column;
-				box-shadow: 0px 7px 12px 4px $primry-color;
+				// box-shadow: 0px 7px 10px 4px $primry-color;
 				color: $background-color !important;
 				transform: translateY(-200%);
-				transition: transform 0.6s ease-out;
+				transition: transform 0.3s ease-out;
+				li {
+					a {
+						color: white;
+						font-size: 1.3rem;
+					}
+				}
 			}
 			.show {
 				transform: translateY(0%);
@@ -295,6 +301,7 @@ img {
 				font-size: 3rem;
 			}
 			.appStore {
+				margin-top: 6rem;
 				& > div {
 					width: 150px;
 					margin: 0 auto;
@@ -303,7 +310,7 @@ img {
 		}
 	}
 	@mixin section {
-		margin: 7rem 0;
+		margin: 3rem 0;
 		flex-direction: column-reverse;
 		padding: $mainPadding;
 		gap: 2rem;
@@ -312,6 +319,9 @@ img {
 		}
 		.right {
 			padding-left: 0rem;
+			h1 {
+				font-size: 3rem;
+			}
 		}
 	}
 	#tips {
@@ -331,12 +341,16 @@ img {
 	#takeCare {
 		@include section;
 		margin: 15rem 0;
+		.right {
+			margin-top: 6rem;
+		}
 	}
 	#footer {
 		padding: $mainPadding;
 		max-width: 3rem 0;
 		height: auto;
 		flex-direction: column;
+		margin-top: 20rem !important;
 		.left {
 			.logo {
 				@include logo;
