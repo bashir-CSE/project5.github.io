@@ -464,7 +464,7 @@ img {
   gap: 1rem;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 678px) {
   #heroSection {
     background-size: contain;
     background-position: center;
@@ -484,17 +484,17 @@ img {
   #heroSection #navBar .menu {
     display: block;
     position: fixed;
-    top: 31px;
-    right: 20px;
+    top: 20px;
+    right: 35px;
   }
   #heroSection #navBar .links {
     display: block;
     position: fixed;
-    top: 8vh;
     text-align: center;
     background-color: #fe7649;
-    height: 30vh;
-    width: 96%;
+    top: 2vh;
+    height: 50vh;
+    width: 95%;
     border-radius: 5px;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -509,8 +509,6 @@ img {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    -webkit-box-shadow: 0px 7px 12px 4px #888888;
-            box-shadow: 0px 7px 12px 4px #888888;
     color: #f0f7ff !important;
     -webkit-transform: translateY(-200%);
             transform: translateY(-200%);
@@ -527,6 +525,10 @@ img {
     cursor: pointer;
     color: black;
   }
+  #heroSection #navBar .links li a {
+    color: white;
+    font-size: 1.3rem;
+  }
   #heroSection #navBar .show {
     -webkit-transform: translateY(0%);
             transform: translateY(0%);
@@ -541,12 +543,15 @@ img {
   #heroSection .leftSide h1 {
     font-size: 3rem;
   }
+  #heroSection .leftSide .appStore {
+    margin-top: 6rem;
+  }
   #heroSection .leftSide .appStore > div {
     width: 150px;
     margin: 0 auto;
   }
   #tips {
-    margin: 7rem 0;
+    margin: 3rem 0;
     -webkit-box-orient: vertical;
     -webkit-box-direction: reverse;
         -ms-flex-direction: column-reverse;
@@ -560,8 +565,11 @@ img {
   #tips .right {
     padding-left: 0rem;
   }
+  #tips .right h1 {
+    font-size: 3rem;
+  }
   #about {
-    margin: 7rem 0;
+    margin: 3rem 0;
     -webkit-box-orient: vertical;
     -webkit-box-direction: reverse;
         -ms-flex-direction: column-reverse;
@@ -575,6 +583,9 @@ img {
   #about .right {
     padding-left: 0rem;
   }
+  #about .right h1 {
+    font-size: 3rem;
+  }
   #goals {
     padding: 9rem 0;
   }
@@ -587,7 +598,7 @@ img {
     gap: 3rem;
   }
   #takeCare {
-    margin: 7rem 0;
+    margin: 3rem 0;
     -webkit-box-orient: vertical;
     -webkit-box-direction: reverse;
         -ms-flex-direction: column-reverse;
@@ -602,6 +613,12 @@ img {
   #takeCare .right {
     padding-left: 0rem;
   }
+  #takeCare .right h1 {
+    font-size: 3rem;
+  }
+  #takeCare .right {
+    margin-top: 6rem;
+  }
   #footer {
     padding: 0 2rem;
     max-width: 3rem 0;
@@ -610,6 +627,7 @@ img {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
+    margin-top: 20rem !important;
   }
   #footer .left .logo {
     height: 70px;
