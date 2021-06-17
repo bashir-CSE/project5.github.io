@@ -267,18 +267,18 @@ img {
 				}
 				display: block;
 				position: fixed;
-				top: 8vh;
+				top: 1vh;
 				text-align: center;
 				background-color: $primary-button-background;
 				height: 30vh;
-				width: 96%;
+				width: 97%;
 				border-radius: 5px;
 				@include flex;
 				flex-direction: column;
 				box-shadow: 0px 7px 12px 4px $primry-color;
 				color: $background-color !important;
 				transform: translateY(-200%);
-				transition: transform 0.3s ease-out;
+				transition: transform 0.6s ease-out;
 			}
 			.show {
 				transform: translateY(0%);
